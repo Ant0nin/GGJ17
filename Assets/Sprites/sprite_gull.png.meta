@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6cbb6a1e9e4282d4daaab457881dd6fc
-timeCreated: 1484948105
+timeCreated: 1484949689
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -148,6 +148,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
+        y: 0
+        width: 500
+        height: 500
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sprite_gull_5
+      rect:
+        serializedVersion: 2
+        x: 1000
         y: 0
         width: 500
         height: 500
