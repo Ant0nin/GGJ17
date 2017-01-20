@@ -6,7 +6,7 @@ public class GullAI : MonoBehaviour
 {
 	void Update()
     {
-        float offsetX = Mathf.Cos(Time.time);
+        float offsetX = 0f;//Mathf.Cos(Time.time);
 
         transform.position = new Vector3(
             transform.position.x + offsetX,
