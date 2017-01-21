@@ -39,6 +39,8 @@ public class GullBehavior : MonoBehaviour
                 Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
                 Vector2 dir = -Vector3.Normalize(collisionPoint - gullPosition);
                 rb.AddForce(new Vector2(dir.x, dir.y) * 500f);
+
+                DestroyImmediate(GetComponent<CreatureMove>());
             }
 
 
