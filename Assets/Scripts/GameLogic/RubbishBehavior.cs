@@ -24,6 +24,8 @@ public class RubbishBehavior : TemporaryEntity
         Vector2 waterHorizontalForce = WavesCalculator.evalHorizontalForce(transform.position);
 
         rb.AddForce(waterForceToOutdoor);
+        if (rb.velocity.x < waterHorizontalForce.x)
+            rb.AddForce(waterHorizontalForce);
     }
 
     void ApplyWaterForce()
