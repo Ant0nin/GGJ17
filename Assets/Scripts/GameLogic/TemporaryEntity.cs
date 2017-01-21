@@ -4,8 +4,7 @@ using System.Collections;
 public class TemporaryEntity : MonoBehaviour
 {
     public float timeToLive = 5f;
-
-    // Use this for initialization
+    
     protected virtual void Start()
     {
         IEnumerator coroutineKillMe = KillMe();

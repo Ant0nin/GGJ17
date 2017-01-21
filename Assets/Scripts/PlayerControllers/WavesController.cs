@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WavesController : MonoBehaviour {
+public class WavesController : MonoBehaviour
+{
+    public float amplitudeCoef = 0.2f;
+    public float amplitudeOffset = 0.025f;
 
-    private WavesProperties props;
+    public float pulsationCoef = 2f;
+    public float pulsationOffset = 10f;
 
-    void Start()
-    {
-        props = WavesProperties.getInstance();
-    }
+    public float phaseCoef = -20f;
+    public float archimedeCoef = 100f;
 
 	void Update () {
         // TODO : ajust
-        props.amplitude = Input.GetAxis("Vertical") * 0.2f + 0.025f;
-        props.pulsation = Input.GetAxis("Horizontal") * 2f + 10f;
-        props.phase = Time.time * -20f;
+        WavesProperties.amplitude = Input.GetAxis("Vertical") * amplitudeCoef + amplitudeOffset;
+        WavesProperties.pulsation = Input.GetAxis("Horizontal") * pulsationCoef + pulsationOffset;
+        WavesProperties.phase = Time.time * phaseCoef;
+        WavesProperties.archimedeCoef = archimedeCoef;
     }
 }

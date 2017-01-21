@@ -6,7 +6,7 @@ using System;
 public class RubbishDispenser : MonoBehaviour
 {
     public float tempo = 5f;
-    public Vector2 initialForce = new Vector2(200f, 100f); // TODO : ajust
+    public Vector2 initialForce = new Vector2(0f, 0f); // TODO : ajust
     public RubbishBehavior rubbishPrefab;
 
     void Start()
