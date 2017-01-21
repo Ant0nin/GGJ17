@@ -6,7 +6,7 @@ using System;
 public class RubbishDispenser : MonoBehaviour
 {
     public float tempo = 2f;
-    public RubbishController rubbishPrefab;
+    public RubbishBehavior rubbishPrefab;
 
     void Start()
     {
@@ -15,6 +15,6 @@ public class RubbishDispenser : MonoBehaviour
 
     private void SpawnRubbish()
     {
-        GameObject.Instantiate<RubbishController>(rubbishPrefab, transform.position, transform.rotation);
+        GameObject.Instantiate<RubbishBehavior>(rubbishPrefab, transform.position, transform.rotation);
     }
 }
