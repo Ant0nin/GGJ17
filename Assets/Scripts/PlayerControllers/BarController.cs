@@ -10,8 +10,12 @@ public class BarController : MonoBehaviour {
 
 	void Update ()
     {
-        float offset = Input.GetAxis("Horizontal");
-        float X = Mathf.Clamp(transform.position.x + offset, limitLeftX, limitRightX);
+        //float offset = Input.GetAxis("Horizontal");
+        float pressure_leftTrigger = Input.GetAxis("LeftTrigger");
+        float pressure_rightTrigger = Input.GetAxis("RightTrigger");
+        float offsetX = pressure_rightTrigger - pressure_leftTrigger;
+
+        float X = Mathf.Clamp(transform.position.x + offsetX, limitLeftX, limitRightX);
 
         transform.position = new Vector3(
             X,
