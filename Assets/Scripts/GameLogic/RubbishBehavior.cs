@@ -6,7 +6,6 @@ public class RubbishBehavior : TemporaryEntity
     public BallBehavior ballPrefab;
 
     private Rigidbody2D rb;
-
     private bool wasInWater = false;
 
     protected override void Start()
@@ -17,12 +16,20 @@ public class RubbishBehavior : TemporaryEntity
 
     void Update()
     {
-        Vector2 waterForce = WavesCalculator.evalForceToApply(transform.position);
-        rb.AddForce(waterForce);
-
         bool isInWater = WavesCalculator.isPointInWater(transform.position);
-        if(isInWater && !wasInWater) // entering into the water...
+        if(isInWater &&  !wasInWater) // entering into the water...
             SpawnBall();
+
+        Vector2 waterForceToOutdoor = WavesCalculator.evalForceToOutdoor(transform.position);
+        Vector2 waterHorizontalForce = WavesCalculator.evalHorizontalForce(transform.position);
+
+        rb.velocity = Physics2D.gravity + waterForceToOutdoor + waterHorizontalForce;
+
+    }
+
+    void ApplyWaterForce()
+    {
+       
     }
 
     private void SpawnBall()
@@ -33,7 +40,7 @@ public class RubbishBehavior : TemporaryEntity
             transform.position.z
         );
 
-        //GameObject.Instantiate<BallBehavior>(ballPrefab, spawnPosition, transform.rotation);
+        GameObject.Instantiate<BallBehavior>(ballPrefab, spawnPosition, transform.rotation);
 
         wasInWater = true;
     }

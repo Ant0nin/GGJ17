@@ -18,6 +18,7 @@ public class WavesController : MonoBehaviour
         WavesProperties.amplitude = Input.GetAxis("Vertical") * amplitudeCoef + amplitudeOffset;
         WavesProperties.pulsation = Input.GetAxis("Horizontal") * pulsationCoef + pulsationOffset;
         WavesProperties.phase = Time.time * phaseCoef;
+        WavesProperties.horizontalWind = -phaseCoef;
         WavesProperties.archimedeCoef = archimedeCoef;
     }
 }

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public static class WavesProperties
 {
-    public static float archimedeCoef = 100f;
+    public static float archimedeCoef;
+    public static float horizontalWind;
+
     public static float amplitude;
     public static float pulsation;
     public static float phase;
