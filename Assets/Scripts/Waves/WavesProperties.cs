@@ -36,24 +36,26 @@ public class WavesProperties
             return true;
     }
 
-    public float getSlopeFromX(float X)
+    public float evalSlopeFromX(float X)
     {
         return amplitude * Mathf.Cos(pulsation + X) + Mathf.Sin(pulsation * X + phase);
     }
 
-    public Vector2 getForceToApply(Vector2 point)
+    public Vector2 evalForceToApply(Vector2 point)
     {
         if (isPointInWater(point))
         {
-            float slope = getSlopeFromX(point.x);
-            if (slope > 0)
-                return Vector2.up; // TODO
-            else if (slope > 0)
-                return Vector2.up; // TODO
-            else
-                return Vector2.up;
+            float tangent = evalTangentFromX(point.x);
+            return new Vector2(tangent, 1.0f).normalized;
         }
         else
             return Vector2.zero;
+    }
+
+    public float evalTangentFromX(float X)
+    {
+        float Y = evalYFromX(X);
+        float derivative_X = evalSlopeFromX(X);
+        return Y / derivative_X;
     }
 }
