@@ -33,6 +33,5 @@ public class CreatureMove : MonoBehaviour
         else { // go to right...
             transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
-
     }
 }
