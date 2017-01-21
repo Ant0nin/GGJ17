@@ -21,6 +21,8 @@
 		{
 			Cull Off
 
+			Blend SrcAlpha OneMinusSrcAlpha
+
 			CGPROGRAM
 
 			#pragma enable_d3d11_debug_symbols
@@ -50,8 +52,11 @@
 
 			fixed4 main_frag(v2f i) : SV_Target
 			{
-				float X = i.tc.x;
-				float Y = _Amplitude * sin(_Pulsation * X + _Phase) + 0.5f;
+				float4 scaleX = unity_ObjectToWorld[0][0];
+				float4 scaleY = unity_ObjectToWorld[1][1];
+
+				float X = i.tc.x * scaleX;
+				float Y = (_Amplitude * sin(_Pulsation * X  + _Phase)) + 0.5f;
 
 				if(i.tc.y > Y)
 					return float4(0.0f, 0.0f, 0.0f, 0.0);

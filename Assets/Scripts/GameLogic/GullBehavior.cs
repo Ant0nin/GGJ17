@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GullAI : MonoBehaviour
+public class GullBehavior : MonoBehaviour
 {
     private Animator anim;
 
