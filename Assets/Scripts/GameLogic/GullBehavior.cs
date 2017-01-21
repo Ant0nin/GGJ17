@@ -10,17 +10,6 @@ public class GullBehavior : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
-
-	void Update()
-    {
-        float offsetX = 0f;//Mathf.Cos(Time.time);
-
-        transform.position = new Vector3(
-            transform.position.x + offsetX,
-            transform.position.y,
-            transform.position.z
-        );
-	}
     
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -38,12 +27,11 @@ public class GullBehavior : MonoBehaviour
 
                 Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
                 Vector2 dir = -Vector3.Normalize(collisionPoint - gullPosition);
-                rb.AddForce(new Vector2(dir.x, dir.y) * 500f);
+                rb.AddForce(new Vector2(dir.x, dir.y) * 500f); // TODO : ajust
 
                 Destroy(GetComponent<CreatureMove>());
             }
-
-
+            
         }
     }
 }
