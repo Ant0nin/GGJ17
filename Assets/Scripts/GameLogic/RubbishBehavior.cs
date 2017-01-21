@@ -23,7 +23,7 @@ public class RubbishBehavior : TemporaryEntity
         Vector2 waterForceToOutdoor = WavesCalculator.evalForceToOutdoor(transform.position);
         Vector2 waterHorizontalForce = WavesCalculator.evalHorizontalForce(transform.position);
 
-        rb.velocity = Physics2D.gravity + waterForceToOutdoor + waterHorizontalForce;
+        rb.AddForce(waterForceToOutdoor);
     }
 
     void ApplyWaterForce()

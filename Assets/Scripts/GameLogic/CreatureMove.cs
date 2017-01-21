@@ -28,10 +28,10 @@ public class CreatureMove : MonoBehaviour
         );
 
         if (old_X > X) { // go to left...
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(1, 1, 1);
         }
         else { // go to right...
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 }
