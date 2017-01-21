@@ -7,22 +7,28 @@ public class BarController : MonoBehaviour {
     public float bounceForce = 10f;
     public float limitLeftX = -5f;
     public float limitRightX = 5f;
+    public float mouseSensibility = 1f;
+
+    private Vector2 lastMousePos;
 
 	void Update ()
     {
         //float offset = Input.GetAxis("Horizontal");
-        float pressure_leftTrigger = Input.GetAxis("LeftTrigger");
+        /*float pressure_leftTrigger = Input.GetAxis("LeftTrigger");
         float pressure_rightTrigger = Input.GetAxis("RightTrigger");
-        float offsetX = pressure_rightTrigger - pressure_leftTrigger;
+        float offsetX = pressure_rightTrigger - pressure_leftTrigger;*/
 
-        float X = Mathf.Clamp(transform.position.x + offsetX, limitLeftX, limitRightX);
+        float offsetX = (Input.mousePosition.x - Screen.width / 2) * mouseSensibility;
+        float X = Mathf.Clamp(offsetX, limitLeftX, limitRightX);
 
         transform.position = new Vector3(
             X,
             transform.position.y,
             transform.position.z
         );
-	}
+
+        lastMousePos = Input.mousePosition;
+    }
 
     void OnCollisionEnter2D(Collision2D other)
     {
