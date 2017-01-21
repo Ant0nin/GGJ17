@@ -4,10 +4,29 @@ using UnityEngine;
 
 public class BallBehavior : MonoBehaviour {
 
-    public Vector2 startForce = new Vector2(0, -100);
+    public float timeToLive = 5f;
 
-	void Start () {
-        Rigidbody2D rg = GetComponent<Rigidbody2D>();
-        rg.AddForce(startForce);
-	}
+    private WavesProperties wavesProps;
+    private IEnumerator coroutineKillMe;
+
+    void Start () {
+        wavesProps = WavesProperties.getInstance();
+
+        coroutineKillMe = KillMe();
+        StartCoroutine(coroutineKillMe);
+    }
+
+    void Update()
+    {
+        Vector2 pos = new Vector2(transform.position.x, transform.position.y);
+        bool isInWater = wavesProps.isPointInWater(pos);
+        if (!isInWater)
+            DestroyImmediate(this.gameObject);
+    }
+
+    private IEnumerator KillMe()
+    {
+        yield return new WaitForSeconds(timeToLive);
+        DestroyImmediate(this.gameObject);
+    }
 }

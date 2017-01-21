@@ -38,7 +38,7 @@ public class WavesProperties
 
     public float evalSlopeFromX(float X)
     {
-        float slope = Mathf.Sin(pulsation * X + phase) + amplitude * Mathf.Cos(pulsation + phase);
+        float slope = /*Mathf.Sin(pulsation * X + phase) +*/ amplitude * Mathf.Cos(pulsation + phase);
         //float slope = amplitude * Mathf.Cos(pulsation * X + phase);
         return slope;
     }
@@ -48,7 +48,7 @@ public class WavesProperties
         if (isPointInWater(point))
         {
             float slope = evalSlopeFromX(point.x);
-            return new Vector2(slope, 1.0f) * 10f;
+            return new Vector2(slope, 1.0f).normalized * 10f;
         }
         else
             return Vector2.zero;
