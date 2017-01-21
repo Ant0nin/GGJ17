@@ -38,28 +38,19 @@ public class WavesProperties
 
     public float evalSlopeFromX(float X)
     {
-        return amplitude * Mathf.Cos(pulsation + X) + Mathf.Sin(pulsation * X + phase);
+        float slope = Mathf.Sin(pulsation * X + phase) + amplitude * Mathf.Cos(pulsation + phase);
+        //float slope = amplitude * Mathf.Cos(pulsation * X + phase);
+        return slope;
     }
 
     public Vector2 evalForceToApply(Vector2 point)
     {
         if (isPointInWater(point))
         {
-            float tangent = evalTangentFromX(point.x);
-            return new Vector2(tangent, 1.0f).normalized;
+            float slope = evalSlopeFromX(point.x);
+            return new Vector2(slope, 1.0f) * 10f;
         }
         else
             return Vector2.zero;
-    }
-
-    public float evalTangentFromX(float X)
-    {
-        float Y = evalYFromX(X);
-        float derivative_X = evalSlopeFromX(X);
-
-        if (derivative_X == 0)
-            return 0f;
-        else
-            return Y / derivative_X;
     }
 }

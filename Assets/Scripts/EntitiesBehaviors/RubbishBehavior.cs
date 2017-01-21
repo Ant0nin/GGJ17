@@ -3,7 +3,7 @@ using System.Collections;
 
 public class RubbishBehavior : MonoBehaviour
 {
-    public static Vector2 windForce = new Vector2(5f, 0f);
+    public static Vector2 windForce = new Vector2(0f, 0f); // TODO : ajust
     public float timeToLive = 5f;
 
     private WavesProperties wavesProps;
