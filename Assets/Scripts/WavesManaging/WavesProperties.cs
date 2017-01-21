@@ -13,7 +13,7 @@ public class WavesProperties
         // TODO : default values
     }
 
-    public static WavesProperties instance;
+    private static WavesProperties instance;
     public static WavesProperties getInstance()
     {
         if (instance == null)
@@ -56,6 +56,10 @@ public class WavesProperties
     {
         float Y = evalYFromX(X);
         float derivative_X = evalSlopeFromX(X);
-        return Y / derivative_X;
+
+        if (derivative_X == 0)
+            return 0f;
+        else
+            return Y / derivative_X;
     }
 }
