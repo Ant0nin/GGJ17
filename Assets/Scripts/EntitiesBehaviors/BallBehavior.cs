@@ -2,18 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallBehavior : MonoBehaviour {
+public class BallBehavior : TemporaryEntity {
 
-    public float timeToLive = 5f;
 
     private WavesProperties wavesProps;
     private IEnumerator coroutineKillMe;
 
-    void Start () {
+    protected override void Start () {
+        base.Start();
         wavesProps = WavesProperties.getInstance();
-
-        coroutineKillMe = KillMe();
-        StartCoroutine(coroutineKillMe);
     }
 
     void Update()
@@ -22,11 +19,5 @@ public class BallBehavior : MonoBehaviour {
         bool isInWater = wavesProps.isPointInWater(pos);
         if (!isInWater)
             DestroyImmediate(this.gameObject);
-    }
-
-    private IEnumerator KillMe()
-    {
-        yield return new WaitForSeconds(timeToLive);
-        DestroyImmediate(this.gameObject);
     }
 }

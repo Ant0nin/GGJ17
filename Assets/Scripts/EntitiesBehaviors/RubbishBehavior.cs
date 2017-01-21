@@ -1,24 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RubbishBehavior : MonoBehaviour
+public class RubbishBehavior : TemporaryEntity
 {
     public static Vector2 windForce = new Vector2(0f, 0f); // TODO : ajust
-    public float timeToLive = 5f;
     public BallBehavior ballPrefab;
 
     private WavesProperties wavesProps;
-    private IEnumerator coroutineKillMe;
     private Rigidbody2D rb;
 
     private bool wasInWater = false;
-    
-    void Start()
+
+    protected override void Start()
     {
+        base.Start();
         wavesProps = WavesProperties.getInstance();
         rb = GetComponent<Rigidbody2D>();
-        coroutineKillMe = KillMe();
-        StartCoroutine(coroutineKillMe);
     }
 
     void Update()
