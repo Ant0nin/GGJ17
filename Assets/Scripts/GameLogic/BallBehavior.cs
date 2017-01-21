@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class BallBehavior : TemporaryEntity {
 
+    public float initialForcePower = 10f;
+
     protected override void Start()
     {
         base.Start();
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         Vector2 pos = new Vector2(transform.position.x, transform.position.y);
-        Vector2 initialForce = WavesCalculator.evalForceToApply(pos);
+        Vector2 initialForce = WavesCalculator.evalDirToIndoor(pos) * initialForcePower;
         rb.AddForce(initialForce);
     }
 
