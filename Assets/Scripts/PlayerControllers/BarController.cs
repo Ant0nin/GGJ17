@@ -5,13 +5,16 @@ using UnityEngine;
 public class BarController : MonoBehaviour {
 
     public float bounceForce = 10f;
+    public float limitLeftX = -5f;
+    public float limitRightX = 5f;
 
 	void Update ()
     {
         float offset = Input.GetAxis("Horizontal");
+        float X = Mathf.Clamp(transform.position.x + offset, limitLeftX, limitRightX);
 
         transform.position = new Vector3(
-            transform.position.x + offset,
+            X,
             transform.position.y,
             transform.position.z
         );
