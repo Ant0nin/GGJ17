@@ -29,8 +29,10 @@ public class CreatureMove : MonoBehaviour
 
         if (old_X > X) { // go to left...
             transform.localScale = new Vector3(1, 1, 1);
+            //sprite.flipY = !sprite.flipY;
         }
         else { // go to right...
+            //sprite.flipY = !sprite.flipY;
             transform.localScale = new Vector3(-1, 1, 1);
         }
     }
