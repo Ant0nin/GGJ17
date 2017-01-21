@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BallBehavior : TemporaryEntity {
-
-
+    
     private WavesProperties wavesProps;
-    private IEnumerator coroutineKillMe;
 
     protected override void Start () {
         base.Start();

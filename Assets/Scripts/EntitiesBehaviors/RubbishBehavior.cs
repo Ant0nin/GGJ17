@@ -26,11 +26,23 @@ public class RubbishBehavior : TemporaryEntity
 
         bool isInWater = wavesProps.isPointInWater(transform.position);
         if(isInWater && !wasInWater) // entering into the water...
-        {
-            GameObject.Instantiate<BallBehavior>(ballPrefab, transform.position, transform.rotation);
-            wasInWater = true;
-        }
+            SpawnBall();
+    }
 
+    private void SpawnBall()
+    {
+        Vector3 spawnPosition = new Vector3(
+                transform.position.x,
+                transform.position.y - 5f, // TODO : ajust
+                transform.position.z
+            );
+        Vector2 initialForce = -wavesProps.evalForceToApply(transform.position) * 10f; // TODO : ajust
+
+        BallBehavior newBall = GameObject.Instantiate<BallBehavior>(ballPrefab, spawnPosition, transform.rotation);
+        Rigidbody2D ballRb = newBall.gameObject.GetComponent<Rigidbody2D>();
+        ballRb.AddForce(initialForce);
+
+        wasInWater = true;
     }
 
     private IEnumerator KillMe()

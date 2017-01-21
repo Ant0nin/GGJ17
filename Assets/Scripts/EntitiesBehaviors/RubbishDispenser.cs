@@ -5,7 +5,8 @@ using System;
 
 public class RubbishDispenser : MonoBehaviour
 {
-    public float tempo = 2f;
+    public float tempo = 5f;
+    public Vector2 initialForce = new Vector2(200f, 100f); // TODO : ajust
     public RubbishBehavior rubbishPrefab;
 
     void Start()
@@ -15,6 +16,7 @@ public class RubbishDispenser : MonoBehaviour
 
     private void SpawnRubbish()
     {
-        GameObject.Instantiate<RubbishBehavior>(rubbishPrefab, transform.position, transform.rotation);
+        RubbishBehavior rub = GameObject.Instantiate<RubbishBehavior>(rubbishPrefab, transform.position, transform.rotation);
+        rub.GetComponent<Rigidbody2D>().AddForce(initialForce);
     }
 }
