@@ -9,11 +9,13 @@ public class CreatureMove : MonoBehaviour
 
     private float originalPosX;
     private SpriteRenderer sprite;
+    private Vector3 originScale;
 
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
         originalPosX = transform.position.x;
+        originScale = transform.localScale;
     }
 
     void Update()
@@ -28,12 +30,10 @@ public class CreatureMove : MonoBehaviour
         );
 
         if (old_X > X) { // go to left...
-            transform.localScale = new Vector3(1, 1, 1);
-            //sprite.flipY = !sprite.flipY;
+            transform.localScale = new Vector3(originScale.x, originScale.y, originScale.z);
         }
         else { // go to right...
-            //sprite.flipY = !sprite.flipY;
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-originScale.x, originScale.y, originScale.z);
         }
     }
 }

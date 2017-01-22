@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: f4699d37ed5ce6e4ea23effc33e8105b
-timeCreated: 1485081435
+timeCreated: 1485082096
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -102,11 +102,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 440
-        width: 360
+        y: 220
+        width: 180
         height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -114,12 +114,12 @@ TextureImporter:
       name: sprite_onde_move_making_1
       rect:
         serializedVersion: 2
-        x: 360
-        y: 440
-        width: 360
+        x: 180
+        y: 220
+        width: 180
         height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -127,12 +127,12 @@ TextureImporter:
       name: sprite_onde_move_making_2
       rect:
         serializedVersion: 2
-        x: 720
-        y: 440
-        width: 360
+        x: 360
+        y: 220
+        width: 180
         height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -140,12 +140,12 @@ TextureImporter:
       name: sprite_onde_move_making_3
       rect:
         serializedVersion: 2
-        x: 1080
-        y: 440
-        width: 360
+        x: 540
+        y: 220
+        width: 180
         height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -153,12 +153,12 @@ TextureImporter:
       name: sprite_onde_move_making_4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 720
         y: 220
-        width: 360
+        width: 180
         height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -166,12 +166,12 @@ TextureImporter:
       name: sprite_onde_move_making_5
       rect:
         serializedVersion: 2
-        x: 360
+        x: 900
         y: 220
-        width: 360
+        width: 180
         height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -179,12 +179,12 @@ TextureImporter:
       name: sprite_onde_move_making_6
       rect:
         serializedVersion: 2
-        x: 720
+        x: 1080
         y: 220
-        width: 360
+        width: 180
         height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -192,12 +192,12 @@ TextureImporter:
       name: sprite_onde_move_making_7
       rect:
         serializedVersion: 2
-        x: 1080
+        x: 1260
         y: 220
-        width: 360
+        width: 180
         height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -207,10 +207,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 360
+        width: 180
         height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -218,12 +218,12 @@ TextureImporter:
       name: sprite_onde_move_making_9
       rect:
         serializedVersion: 2
-        x: 360
+        x: 180
         y: 0
-        width: 360
+        width: 180
         height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -231,12 +231,12 @@ TextureImporter:
       name: sprite_onde_move_making_10
       rect:
         serializedVersion: 2
-        x: 720
+        x: 360
         y: 0
-        width: 360
+        width: 180
         height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -244,12 +244,12 @@ TextureImporter:
       name: sprite_onde_move_making_11
       rect:
         serializedVersion: 2
-        x: 1080
+        x: 540
         y: 0
-        width: 360
+        width: 180
         height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
