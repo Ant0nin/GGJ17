@@ -8,6 +8,7 @@ public class BarController : MonoBehaviour {
     public float limitLeftX = -5f;
     public float limitRightX = 5f;
     public float mouseSensibility = 1f;
+    public float offsetXCorrection = 0f;
 
     private Vector2 lastMousePos;
 
@@ -18,7 +19,7 @@ public class BarController : MonoBehaviour {
         float pressure_rightTrigger = Input.GetAxis("RightTrigger");
         float offsetX = pressure_rightTrigger - pressure_leftTrigger;*/
 
-        float offsetX = (Input.mousePosition.x - Screen.width / 2) * mouseSensibility;
+        float offsetX = (Input.mousePosition.x) * mouseSensibility + offsetXCorrection;
         float X = Mathf.Clamp(offsetX, limitLeftX, limitRightX);
 
         transform.position = new Vector3(
