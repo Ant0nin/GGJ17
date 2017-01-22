@@ -1,13 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System;
 
 public class RubbishDispenser : MonoBehaviour
 {
     public float tempo = 5f;
     public Vector2 initialForce = new Vector2(0f, 0f); // TODO : ajust
-    public RubbishBehavior rubbishPrefab;
+    public RubbishBehavior[] rubbishPrefabs;
 
     void Start()
     {
@@ -16,7 +13,10 @@ public class RubbishDispenser : MonoBehaviour
 
     private void SpawnRubbish()
     {
-        RubbishBehavior rub = GameObject.Instantiate<RubbishBehavior>(rubbishPrefab, transform.position, transform.rotation);
+        int index = Random.Range(0, rubbishPrefabs.Length);
+        RubbishBehavior targetPrefab = rubbishPrefabs[index];
+
+        RubbishBehavior rub = GameObject.Instantiate<RubbishBehavior>(targetPrefab, transform.position, transform.rotation);
         rub.GetComponent<Rigidbody2D>().AddForce(initialForce);
     }
 }

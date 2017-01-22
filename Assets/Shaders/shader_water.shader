@@ -56,12 +56,12 @@
 				float4 scaleY = unity_ObjectToWorld[1][1];
 
 				float X = i.tc.x * scaleX;
-				float Y = (_Amplitude * sin(_Pulsation * X  + _Phase)) + 0.5f;
+				float Y = ((_Amplitude * sin(_Pulsation * X  + _Phase)) + 0.5f); // TODo
 
 				if(i.tc.y > Y)
-					return float4(0.0f, 0.0f, 0.0f, 0.0);
+					return float4(0.0, 0.0, 0.0, 0.0);
 				else
-					return float4(0.0, 0.0f, 1.0f, 0.4);
+					return float4(0.09f, 0.24f, 0.32f, 0.4);
 			}
 
 			ENDCG
