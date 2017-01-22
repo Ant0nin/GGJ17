@@ -4,6 +4,7 @@ using System.Collections;
 public class PollutingRubbishBehavior : RubbishBehavior
 {
     public float tempo;
+    public float spawnOffsetY;
 
     protected override void Start()
     {
@@ -15,7 +16,7 @@ public class PollutingRubbishBehavior : RubbishBehavior
     {
         Vector3 spawnPosition = new Vector3(
             transform.position.x,
-            transform.position.y - 5f, // TODO : ajust
+            transform.position.y - spawnOffsetY,
             transform.position.z
         );
 
