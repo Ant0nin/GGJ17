@@ -11,8 +11,6 @@ public class RubbishBehavior : TemporaryEntity
     {
         base.Start();
         rb = GetComponent<Rigidbody2D>();
-
-        //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Walls"), LayerMask.NameToLayer("Rubbish"), true);
     }
 
     protected void Update()

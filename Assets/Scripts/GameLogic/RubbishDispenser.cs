@@ -9,6 +9,7 @@ public class RubbishDispenser : MonoBehaviour
     void Start()
     {
         InvokeRepeating("SpawnRubbish", 0f, tempo);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Walls_Filter"), LayerMask.NameToLayer("Rubbish"), true);
     }
 
     private void SpawnRubbish()
